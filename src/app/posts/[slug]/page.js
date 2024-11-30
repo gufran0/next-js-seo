@@ -1,34 +1,9 @@
 import Image from "next/image";
 import { posts } from "../../_lib/data/posts";
-import parse from "html-react-parser";
 
-export async function generateMetadata({ params }) {
-  const post = posts.find((p) => p.slug === params.slug);
-
-  if (!post) {
-    return {
-      title: "Post Not Found",
-      description: "The post you are looking for does not exist.",
-    };
-  }
-
-  return {
-    title: post.title,
-    description: `Read this blog post: ${post.title}. Published on ${new Date(
-      post.date
-    ).toLocaleDateString()}.`,
-  };
-}
-
-// Generate static paths for dynamic routes
-export const generateStaticParams = () => {
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
-};
-
-const PostPage = ({ params }) => {
-  const post = posts.find((p) => p.slug === params.slug);
+const PostPage = async ({ params }) => {
+  const { slug } = await params; // Await params to ensure it resolves correctly
+  const post = posts.find((p) => p.slug === slug);
 
   if (!post) {
     return <div className="text-center text-gray-600">Post not found</div>;
@@ -46,9 +21,10 @@ const PostPage = ({ params }) => {
             Published on {new Date(post.date).toLocaleDateString()}
           </p>
 
-          <div className="prose prose-xl max-w-none text-gray-700 leading-relaxed mb-8">
-            {parse(post.content)}
-          </div>
+          <div
+            className="prose prose-xl max-w-none text-gray-700 leading-relaxed mb-8"
+            dangerouslySetInnerHTML={{ __html: post.content }}
+          ></div>
         </div>
 
         <div className="border-t border-gray-200"></div>

@@ -2,6 +2,7 @@
 
 export const posts = [
   {
+    id:1,
     slug: "meta-data",
     title: "Next.js Metadata: Boost SEO & Enhance Social Sharing",
     date: "2024-11-30",
@@ -28,6 +29,7 @@ export const posts = [
   },
 
   {
+    id:2,
     slug: "dynamic-meta-data",
     title: "Next.js Dynamic Metadata",
     date: "2024-11-29",
@@ -41,6 +43,7 @@ export const posts = [
   },
 
   {
+    id:3,
     slug: "robots-txt",
     title: " Robots.txt ",
     date: "2024-11-25",
@@ -51,6 +54,7 @@ export const posts = [
   },
 
   {
+    id:4,
     slug: "sitemap",
     title: " Sitemaps for SEO",
     date: "2024-11-30",
@@ -63,6 +67,7 @@ export const posts = [
   }
 ,  
 {
+  id:5,
   
     slug: "nextjs-image-seo",
     title: "Image Optimization Boosts SEO",
@@ -78,6 +83,7 @@ export const posts = [
 
 },
 {
+  id:6,
   slug: "nextjs-code-splitting",
   title: "How Code Splitting in Next.js 14 Enhances Performance",
   date: "2024-11-29",
@@ -91,6 +97,7 @@ export const posts = [
 },
  
 {
+  id:7,
   slug: "font-optimization-nextjs",
   title: "How Font Optimization in Next.js 14 Boosts SEO",
   date: "2024-11-30",
@@ -103,6 +110,7 @@ export const posts = [
 }
 ,
 {
+  id:8,
   slug: "canonical-alternate-links-nextjs",
   title: "How Canonical and Alternate Links in Next.js 14 Boost SEO",
   date: "2024-11-30",
@@ -115,29 +123,13 @@ export const posts = [
 },
   
   {
+    id:9,
     slug: "third-post",
     title: "Third Post",
     date: "2024-11-25",
     content: "<p>This is the content of my third post. More to come!</p>",
   },
-  {
-    slug: "my-first-post",
-    title: "My First Post",
-    date: "2024-11-30",
-    content: "<p>This is the content of my first post. Welcome to my blog!</p>",
-  },
-  {
-    slug: "second-post",
-    title: "Second Post",
-    date: "2024-11-29",
-    content: "<p>This is the content of my second post. Hope you enjoy it!</p>",
-  },
-  {
-    slug: "third-post",
-    title: "Third Post",
-    date: "2024-11-25",
-    content: "<p>This is the content of my third post. More to come!</p>",
-  },
+ 
 
   // You can add more posts here...
 ];
