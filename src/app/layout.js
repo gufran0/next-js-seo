@@ -1,4 +1,5 @@
 import { Inter } from "next/font/google";
+import Head from "next/head"; // Import Head for metadata
 import "./globals.css";
 
 import Header from "./components/Header";
@@ -42,10 +43,51 @@ export const metadata = {
   },
 };
 
-
 export default function RootLayout({ children }) {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    url: "https://yourdomain.com",
+    name: "Mastering Next.js Metadata",
+    description:
+      "Learn how to effectively use metadata in Next.js to improve SEO rankings and create compelling social media previews.",
+    publisher: {
+      "@type": "Organization",
+      name: "Your Organization Name",
+    },
+  };
+
   return (
     <html lang="en">
+      <Head>
+        {/* Meta tag for robots */}
+        <meta name="robots" content="index, follow" />
+        {/* Structured data for search engines */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+        {/* Title and description for SEO */}
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+        {/* Open Graph metadata */}
+        <meta property="og:title" content={metadata.openGraph.title} />
+        <meta
+          property="og:description"
+          content={metadata.openGraph.description}
+        />
+        <meta property="og:url" content={metadata.openGraph.url} />
+        <meta property="og:image" content={metadata.openGraph.images[0].url} />
+        {/* Twitter metadata */}
+        <meta name="twitter:card" content={metadata.twitter.card} />
+        <meta name="twitter:title" content={metadata.twitter.title} />
+        <meta
+          name="twitter:description"
+          content={metadata.twitter.description}
+        />
+        <meta name="twitter:image" content={metadata.twitter.images[0]} />
+        <meta name="twitter:creator" content={metadata.twitter.creator} />
+      </Head>
       <body className={inter.className}>
         <Header />
         {children}
