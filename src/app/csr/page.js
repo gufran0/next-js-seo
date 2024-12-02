@@ -1,15 +1,15 @@
-'use client';
+// 'use client';
 
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 
-export default function Page() {
-  const [data, setData] = useState(null);
+// export default function Page() {
+//   const [data, setData] = useState(null);
 
-  useEffect(() => {
-    fetch('https://api.example.com/data')
-      .then((res) => res.json())
-      .then((data) => setData(data));
-  }, []);
+//   useEffect(() => {
+//     fetch('https://api.example.com/data')
+//       .then((res) => res.json())
+//       .then((data) => setData(data));
+//   }, []);
 
-  return <div>{data ? data.title : 'Loading...'}</div>;
-}
+//   return <div>{data ? data.title : 'Loading...'}</div>;
+// }

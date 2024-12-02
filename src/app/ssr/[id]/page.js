@@ -1,3 +1,6 @@
+
+
+
 export async function generateMetadata({ params }) {
     return {
       title: `Item ${params.id}`,
@@ -5,15 +8,10 @@ export async function generateMetadata({ params }) {
     };
   }
   
-  export async function getServerSideProps({ params }) {
+
+  export default async function Page({ params }) {
     const data = await fetch(`https://api.example.com/item/${params.id}`).then((res) => res.json());
   
-    return {
-      props: { data },
-    };
-  }
-  
-  export default function Page({ data }) {
     return <div>{data.title}</div>;
   }
   
