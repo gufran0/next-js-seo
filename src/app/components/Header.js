@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <header className="bg-gray-800 text-white shadow-md">
       <div className="max-w-screen-xl mx-auto px-4 py-4 flex justify-between items-center">
-        {/* Logo */}
+     
         <div>
           <Link href="/">
             <span className="text-3xl font-bold text-blue-500">MyWebsite</span>

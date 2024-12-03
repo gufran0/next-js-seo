@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { posts } from "../../_lib/data/posts";
 import Script from "next/script";
-import { notFound } from "next/navigation"; // Import notFound function
+import { notFound } from "next/navigation"; 
 
 const PostPage = async ({ params }) => {
   const { slug } = params; // Extract params directly

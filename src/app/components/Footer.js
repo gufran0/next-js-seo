@@ -3,7 +3,7 @@ const Footer = () => {
       <footer className="bg-gray-800 text-white py-6 mt-12">
         <div className="max-w-screen-xl mx-auto px-4">
           <div className="flex justify-between items-center">
-            {/* Footer Logo or Brand */}
+         
             <div>
               <p className="text-lg font-semibold text-blue-500">MyWebsite</p>
             </div>
